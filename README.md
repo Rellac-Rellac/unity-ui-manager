@@ -4,6 +4,8 @@ ScriptableObject Architecture implemented in a UI Manager
 This manager is all about rapid development and for passing a project to a designer who may struggle
 with complex scene navigation - once setup, it is very fast to make minor changes to your workflow
 
+![](gif_demo.gif)
+
 # UI Manager
 ------------
 Create > UI > Manager

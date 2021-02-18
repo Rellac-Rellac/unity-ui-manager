@@ -74,7 +74,7 @@ namespace Rellac.UI
 			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForTransitionIn(instantiation));
 		}
 
-		private IEnumerator WaitForTransitionIn(RectTransform parent)
+		public IEnumerator WaitForTransitionIn(RectTransform parent)
 		{
 			yield return new WaitForSeconds(inAnimation.length * animationSpeed);
 			onPanelTransitionedIn.Invoke(parent);

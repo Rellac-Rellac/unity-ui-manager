@@ -61,6 +61,7 @@ namespace Rellac.UI
 		public void OnPanelInstantiated(RectTransform rect)
 		{
 			onPanelInstantiated.Invoke(rect);
+			Debug.Log("OnPanelInstantiated");
 		}
 
 		/// <summary>
@@ -70,6 +71,7 @@ namespace Rellac.UI
 		public void OnPanelTransitionedIn(RectTransform rect)
 		{
 			onPanelTransitionedIn.Invoke(rect);
+			Debug.Log("OnPanelTransitionedIn");
 		}
 
 		/// <summary>

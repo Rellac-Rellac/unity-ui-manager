@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea31ea6feef6a5449be4544f2dd0255c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 11400000, guid: 9088abeade25f784fb1d92140a651761, type: 2}
+  panel: {fileID: 11400000, guid: 580a3edc95a133a4286ccd9d5764d607, type: 2}
   onPanelInstantiated:
     m_PersistentCalls:
       m_Calls: []

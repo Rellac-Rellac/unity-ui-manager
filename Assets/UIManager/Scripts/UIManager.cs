@@ -62,7 +62,7 @@ namespace Rellac.UI
 			RectTransform panelRoot = (RectTransform)Instantiate(initialPanel.panelPrefab, inParent).transform;
 			animator.Play("Instant");
 			initialPanel.Initialise(panelRoot);
-			initialPanel.onPanelTransitionedIn.Invoke(panelRoot);
+			root.GetComponent<MonoBehaviour>().StartCoroutine(initialPanel.WaitForTransitionIn(panelRoot));
 			currentPanel = initialPanel;
 			transitioning = false;
 		}

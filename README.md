@@ -32,6 +32,15 @@ smaller panels to prevent clicking unwanted background buttons
 
 Events are available for whenever this panel is instantiated and when the transitions in/out have ended
 
+# UI Panel Listener
+--------------------
+UIPanelListener can be added to any GameObject and will listen for the relevant events of any specified panel. This can be used to trigger an animation within the panel once it has transitioned or to hide a GameObject until the transition has finished.
+
+Available events to register to:
+- onPrefabInstantiated
+- onTransitionedIn
+- onTransitionedOut
+
 # Adding an Animation
 ----------------------
 Animations can be added to the prefab located at UIManager/Resources/UIManager/UI Root

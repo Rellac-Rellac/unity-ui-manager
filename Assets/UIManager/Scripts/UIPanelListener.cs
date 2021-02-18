@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
 namespace Rellac.UI
 {
 	public class UIPanelListener : MonoBehaviour

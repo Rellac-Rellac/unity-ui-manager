@@ -39,6 +39,7 @@ UIPanelListener can be added to any GameObject and will listen for the relevant 
 Available events to register to:
 - onPrefabInstantiated
 - onTransitionedIn
+- onTransitionOutStarted
 - onTransitionedOut
 
 # Adding an Animation

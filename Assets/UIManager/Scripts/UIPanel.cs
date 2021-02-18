@@ -35,10 +35,14 @@ namespace Rellac.UI
 		/// </summary>
 		public RectTransformEvent onPanelTransitionedIn;
 		/// <summary>
+		/// Passes RectTransform of root when transition out begins
+		/// </summary>
+		public RectTransformEvent onPanelTransitionOutStarted;
+		/// <summary>
 		/// Fired when transition has ended and gameobject has been destroyed
 		/// </summary>
 		public RectTransformEvent onPanelTransitionedOut;
-
+		
 		private RectTransform instantiation;
 		/// <summary>
 		/// Get root of panel

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 namespace Rellac.UI
 {
 	public class UIPanelListener : MonoBehaviour
@@ -19,6 +20,10 @@ namespace Rellac.UI
 		/// </summary>
 		public RectTransformEvent onPanelTransitionedIn;
 		/// <summary>
+		/// Passes RectTransform of root when transition out has started
+		/// </summary>
+		public RectTransformEvent onPanelTransitionOutStarted;
+		/// <summary>
 		/// Fired when transition has ended and gameobject has been destroyed
 		/// </summary>
 		public RectTransformEvent onPanelTransitionedOut;
@@ -26,6 +31,7 @@ namespace Rellac.UI
 		private UnityAction<RectTransform> panelInstantiated;
 		private UnityAction<RectTransform> panelTransitionedIn;
 		private UnityAction<RectTransform> panelTransitionedOut;
+		private UnityAction<RectTransform> panelTransitionOutStarted;
 
 		// Start is called before the first frame update
 		void Start()
@@ -33,16 +39,19 @@ namespace Rellac.UI
 			panelInstantiated = OnPanelInstantiated;
 			panelTransitionedIn = OnPanelTransitionedIn;
 			panelTransitionedOut = OnPanelTransitionedOut;
+			panelTransitionOutStarted = OnPanelTransitionOutStarted;
 			panel.onPanelInstantiated.AddListener(panelInstantiated);
 			panel.onPanelTransitionedIn.AddListener(panelTransitionedIn);
 			panel.onPanelTransitionedOut.AddListener(panelTransitionedOut);
+			panel.onPanelTransitionOutStarted.AddListener(panelTransitionOutStarted);
 		}
 
 		private void OnDestroy()
 		{
-			onPanelInstantiated.RemoveListener(panelInstantiated);
-			onPanelTransitionedIn.RemoveListener(panelTransitionedIn);
-			onPanelTransitionedOut.RemoveListener(panelTransitionedOut);
+			panel.onPanelInstantiated.RemoveListener(panelInstantiated);
+			panel.onPanelTransitionedIn.RemoveListener(panelTransitionedIn);
+			panel.onPanelTransitionedOut.RemoveListener(panelTransitionedOut);
+			panel.onPanelTransitionOutStarted.RemoveListener(panelTransitionOutStarted);
 		}
 
 		/// <summary>
@@ -70,6 +79,15 @@ namespace Rellac.UI
 		public void OnPanelTransitionedOut(RectTransform rect)
 		{
 			onPanelTransitionedOut.Invoke(rect);
+		}
+
+		/// <summary>
+		/// Panel has finished its transition out
+		/// </summary>
+		/// <param name="rect">parent rect of ui prefab</param>
+		public void OnPanelTransitionOutStarted(RectTransform rect)
+		{
+			onPanelTransitionOutStarted.Invoke(rect);
 		}
 	}
 }

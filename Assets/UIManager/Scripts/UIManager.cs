@@ -78,6 +78,10 @@ namespace Rellac.UI
 				Debug.LogError("Wait for transition to end before setting new panel");
 				return;
 			}
+			if (currentPanel != null)
+			{
+				currentPanel.onPanelTransitionOutStarted.Invoke(root_);
+			}
 
 			clickBlocker.SetActive(true);
 			passOverBlocker.SetActive(input.blockPassOver);

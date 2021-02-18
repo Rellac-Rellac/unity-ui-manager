@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 namespace Rellac.UI
 {
 	[CreateAssetMenu(fileName = "New UI Panel", menuName = "UI/Panel", order = 1)]
@@ -75,11 +74,6 @@ namespace Rellac.UI
 		{
 			yield return new WaitForSeconds(inAnimation.length * animationSpeed);
 			onPanelTransitionedIn.Invoke(parent);
-		}
-
-		[System.Serializable]
-		public class RectTransformEvent : UnityEvent<RectTransform>
-		{
 		}
 
 	}

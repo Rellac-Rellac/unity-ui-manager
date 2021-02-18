@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057ab074f94fedd4d8431cf5471dbad5, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  initialPanel: {fileID: 11400000, guid: 580a3edc95a133a4286ccd9d5764d607, type: 2}
+  initialPanel: {fileID: 11400000, guid: e031f368e55cbb94cb05c61b15432009, type: 2}

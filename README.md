@@ -34,6 +34,8 @@ smaller panels to prevent clicking unwanted background buttons
 
 Events are available for whenever this panel is instantiated and when the transitions in/out have ended
 
+![](UIPanel-example.png)
+
 # UI Panel Listener
 --------------------
 UIPanelListener can be added to any GameObject and will listen for the relevant events of any specified panel. This can be used to trigger an animation within the panel once it has transitioned or to hide a GameObject until the transition has finished.

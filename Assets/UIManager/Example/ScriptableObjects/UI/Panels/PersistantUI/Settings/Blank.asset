@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Blank
   m_EditorClassIdentifier: 
   panelPrefab: {fileID: 8070701578967653149, guid: d6c9f540535341145b9af595aee8be71, type: 3}
-  inAnimation: {fileID: 7400000, guid: a06bf54765b1c8b41860f892fea59ac9, type: 2}
-  animationSpeed: 1
+  inAnimation: {fileID: 7400000, guid: 6060cae0cfddb03439305b067bbe5238, type: 2}
+  animationSpeed: 0.3
   blockPassOver: 0
   onPanelInstantiated:
     m_PersistentCalls:

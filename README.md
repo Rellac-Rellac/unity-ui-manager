@@ -17,6 +17,8 @@ A Manager must first be Initialised with a starting RectTransform before panels 
 
 An initialised Manager can swap between panels via SetPanel(UIPanel)
 
+![](SetPanel-example.png)
+
 # UI Panel
 ----------
 Create > UI > Panel

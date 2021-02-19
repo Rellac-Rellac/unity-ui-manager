@@ -48,6 +48,7 @@ Events are available for whenever this panel is instantiated and when the transi
 UIPanelListener can be added to any GameObject and will listen for the relevant events of any specified panel. This can be used to trigger an animation within the panel once it has transitioned or to hide a GameObject until the transition has finished.
 
 Available events to register to:
+
 ![](Listener-example.png)
 
 # Adding an Animation

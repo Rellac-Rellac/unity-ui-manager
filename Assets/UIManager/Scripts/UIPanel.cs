@@ -22,6 +22,11 @@ namespace Rellac.UI
 		[Tooltip("Speed in seconds to run transition animation")]
 		public float animationSpeed = 1;
 		/// <summary>
+		/// Panel rendered on top during this transition
+		/// </summary>
+		[Tooltip("Panel rendered on top during this transition")]
+		public ParentSelection panelOnTop;
+		/// <summary>
 		/// Enable click blocker behind this panel
 		/// </summary>
 		[Tooltip("Enable click blocker behind this panel")]
@@ -78,6 +83,12 @@ namespace Rellac.UI
 		{
 			yield return new WaitForSeconds(inAnimation.length * animationSpeed);
 			onPanelTransitionedIn.Invoke(parent);
+		}
+
+		public enum ParentSelection
+		{
+			In,
+			Out
 		}
 
 	}

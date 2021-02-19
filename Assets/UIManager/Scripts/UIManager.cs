@@ -85,6 +85,9 @@ namespace Rellac.UI
 
 			clickBlocker.SetActive(true);
 			passOverBlocker.SetActive(input.blockPassOver);
+
+			inParent.SetSiblingIndex(input.panelOnTop == UIPanel.ParentSelection.In ? 2 : 1);
+
 			root.GetComponent<UIFitter>().Fit();
 			foreach (Transform child in inParent)
 			{

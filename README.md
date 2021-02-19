@@ -9,7 +9,7 @@ A Simple UI Manager for rapid prototyping and ease of collaboration
 - Very fast to get a prototype up and running
 - Pretty UI Transitions just as easy as GameObject.SetActive()
 - Very simple inspector with minimal inputs, a great way to bridge the experience gap between a developer and a designer
-- Only 5 small scripts control the whole system - not much can possibly break
+- Only 6 small scripts control the whole system - not much can possibly break
 - Use of Animations give an incredible amount of control over transitions
 - No code required
 
@@ -37,7 +37,9 @@ Assign a prefab here to instantiate whenever this UIPanel is called - root will 
 
 Specify here the transition animation that you would like to use. The animation must be listed in the Animator Controller of the UIRoot prefab
 
-The speed of the transition is specified in seconds and you can enable the passover click blocker for your smaller panels to prevent clicking unwanted background buttons
+The speed of the transition is specified in seconds and you specify which panel should be on top during the transition here
+
+You can enable the passover click blocker for your smaller panels to prevent clicking unwanted background buttons
 
 Events are available for whenever this panel is instantiated and when the transitions in/out have ended
 
@@ -67,3 +69,5 @@ under the UI Root prefab animations
 
 Animations should last 1 second each so that we can specify the speed in seconds - don't worry if the transition is
 too fast at 1 second - simply specify a larger time in your UIPanel Object
+
+If you want the out parent to clear its contents early (default is at the end of the transition), simply add an Animation Event to your Animation and call ClearOutParent()

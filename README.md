@@ -7,8 +7,7 @@ A Simple UI Manager for rapid prototyping and ease of collaboration
 ------------
 **Create > UI > Manager**
 
-The UI Manager is used to instantiate a starting point and flip between panels in that RectTransform.
-Multiple managers can be used throughout the project and they can reference any UI Panel object.
+The UI Manager is used to instantiate a starting point and flip between panels in that RectTransform. Multiple managers can be used throughout the project and they can reference any UI Panel object.
 
 A Manager must first be Initialised with a starting RectTransform before panels can be called.
 
@@ -22,14 +21,11 @@ An initialised Manager can swap between panels via SetPanel(UIPanel)
 
 UI Panels are used to reference the panel prefab and the transition animation used for each panel.
 
-Assign a prefab (root will be adjusted to a stretched fit over the target RectTransform of the UI Manager)
-in this object to instantiate whenever this ScriptableObject is called
+Assign a prefab here to instantiate whenever this UIPanel is called - root will be adjusted to a stretched fit over the target RectTransform of the UI Manager
 
-Specify here the transition animation that you would like to use. The animation must be listed in the
-Animator Controller of the UIRoot prefab
+Specify here the transition animation that you would like to use. The animation must be listed in the Animator Controller of the UIRoot prefab
 
-The speed of the transition is specified in seconds and you can enable the passover click blocker for your
-smaller panels to prevent clicking unwanted background buttons
+The speed of the transition is specified in seconds and you can enable the passover click blocker for your smaller panels to prevent clicking unwanted background buttons
 
 Events are available for whenever this panel is instantiated and when the transitions in/out have ended
 
@@ -49,8 +45,7 @@ Available events to register to:
 ----------------------
 Animations can be added to the prefab located at UIManager/Resources/UIManager/UI Root
 
-Do not adjust the sizeDelta in your animation - this value is adjusted by the UIFitter on the UI Root prefab.
-It will automatically adjust the Rect to fit the specified parent Rect
+Do not adjust the sizeDelta in your animation - this value is adjusted by the UIFitter on the UI Root prefab. It will automatically adjust the Rect to fit the specified parent Rect
 
 The "Parent_In" object is the panel that is currently coming in and will end as the main panel the user is looking at
 

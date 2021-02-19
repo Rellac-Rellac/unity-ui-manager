@@ -66,16 +66,16 @@ namespace Rellac.UI
 		/// Play set animation transition for this panel
 		/// </summary>
 		/// <param name="manager">UIManager handling Animation</param>
-		public void PlayTransition(UIManager manager)
+		public void PlayTransition(UIManager manager, UITransition transition_, float speed)
 		{
-			manager.animator.speed = 1f / animationSpeed;
-			manager.animator.Play(transition.inAnimation.name);
-			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForTransitionIn(instantiation));
+			manager.animator.speed = 1f / speed;
+			manager.animator.Play(transition_.inAnimation.name);
+			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForTransitionIn(instantiation, speed));
 		}
 
-		public IEnumerator WaitForTransitionIn(RectTransform parent)
+		public IEnumerator WaitForTransitionIn(RectTransform parent, float speed)
 		{
-			yield return new WaitForSeconds(transition.inAnimation.length * animationSpeed);
+			yield return new WaitForSeconds(transition.inAnimation.length * speed);
 			onPanelTransitionedIn.Invoke(parent);
 		}
 

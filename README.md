@@ -26,6 +26,10 @@ An initialised Manager can swap between panels via SetPanel(UIPanel)
 
 ![](SetPanel-example.png)
 
+UI Managers can be set to have "loop groups" - if so, you will specify here a previous/next transition to override what is specified in the UIPanels listed on the UIManager. Panels will logically transition by calling NextPanel() and PreviousPanel() in the UIManager, the index will reset automatically. A Manager with a loop group will override the speed of the animation transition. That value is set here.
+
+![](UIManagers-example.png)
+
 # UI Panel
 ----------
 **Create > UI > Panel**

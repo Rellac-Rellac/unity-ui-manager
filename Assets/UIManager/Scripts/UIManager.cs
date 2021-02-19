@@ -6,10 +6,35 @@ namespace Rellac.UI
 	public class UIManager : ScriptableObject
 	{
 		/// <summary>
+		/// Manager loops between a selection of UIPanels
+		/// </summary>
+		[Tooltip("")]
+		[SerializeField] private bool containsLoopGroup = false;
+		/// <summary>
 		/// Panel to start when manager is initialised - no transition will be made
 		/// </summary>
 		[Tooltip("Panel to start when manager is initialised - no transition will be made")]
 		[SerializeField] private UIPanel initialPanel = null;
+		/// <summary>
+		/// Speed to play transitions across a loop group
+		/// </summary>
+		[Tooltip("Speed to play transitions across a loop group")]
+		[SerializeField] private float loopTransitionSpeed = 1;
+		/// <summary>
+		/// Animation to play when transitioning to the previous panel in a loop group
+		/// </summary>
+		[Tooltip("Animation to play when transitioning to the previous panel in a loop group")]
+		[SerializeField] private UITransition prevTransition = null;
+		/// <summary>
+		/// Animation to play when transitioning to the next panel in a loop group
+		/// </summary>
+		[Tooltip("Animation to play when transitioning to the next panel in a loop group")]
+		[SerializeField] private UITransition nextTransition = null;
+		/// <summary>
+		/// Group of UIPanels to transition between is manager contains a loop group
+		/// </summary>
+		[Tooltip("Group of UIPanels to transition between is manager contains a loop group")]
+		[SerializeField] private UIPanel[] loopGroup = null;
 
 		RectTransform root_;
 		/// <summary>
@@ -45,6 +70,27 @@ namespace Rellac.UI
 		private bool transitioning = false;
 		private UIPanel currentPanel;
 
+		private int loopIdx_;
+		private int loopIdx
+		{
+			get
+			{
+				return loopIdx_;
+			}
+			set
+			{
+				loopIdx_ = value;
+				if (loopIdx_ >= loopGroup.Length)
+				{
+					loopIdx_ = 0;
+				}
+				if (loopIdx < 0)
+				{
+					loopIdx = loopGroup.Length - 1;
+				}
+			}
+		}
+
 		/// <summary>
 		/// Initialise manager in scene
 		/// </summary>
@@ -63,11 +109,18 @@ namespace Rellac.UI
 				fitter.Fit();
 			}
 
-			RectTransform panelRoot = (RectTransform)Instantiate(initialPanel.panelPrefab, inParent).transform;
+			UIPanel panel = initialPanel;
+			if (containsLoopGroup)
+			{
+				panel = loopGroup[0];
+				loopIdx = 0;
+			}
+
+			RectTransform panelRoot = (RectTransform)Instantiate(panel.panelPrefab, inParent).transform;
 			animator.Play("Instant");
-			initialPanel.Initialise(panelRoot);
-			root.GetComponent<MonoBehaviour>().StartCoroutine(initialPanel.WaitForTransitionIn(panelRoot));
-			currentPanel = initialPanel;
+			panel.Initialise(panelRoot);
+			root.GetComponent<MonoBehaviour>().StartCoroutine(panel.WaitForTransitionIn(panelRoot, panel.animationSpeed));
+			currentPanel = panel;
 			transitioning = false;
 		}
 
@@ -77,10 +130,60 @@ namespace Rellac.UI
 		/// <param name="input">UIPanel to transition to</param>
 		public void SetPanel(UIPanel input)
 		{
+			if (TryPreparePanel(input))
+			{
+				input.PlayTransition(this, input.transition, containsLoopGroup ? loopTransitionSpeed : input.animationSpeed);
+				transitioning = true;
+			}
+		}
+
+		public void NextPanel()
+		{
+			if (CheckIsValidLoopGroup())
+			{
+				loopIdx++;
+				if (TryPreparePanel(loopGroup[loopIdx]))
+				{
+					loopGroup[loopIdx].PlayTransition(this, nextTransition, containsLoopGroup ? loopTransitionSpeed : loopGroup[loopIdx].animationSpeed);
+					transitioning = true;
+				}
+			}
+		}
+
+		public void PreviousPanel()
+		{
+			if (CheckIsValidLoopGroup())
+			{
+				loopIdx--;
+				if (TryPreparePanel(loopGroup[loopIdx]))
+				{
+					loopGroup[loopIdx].PlayTransition(this, prevTransition, containsLoopGroup ? loopTransitionSpeed : loopGroup[loopIdx].animationSpeed);
+					transitioning = true;
+				}
+			}
+		}
+
+		private bool CheckIsValidLoopGroup()
+		{
+			if (!containsLoopGroup)
+			{
+				Debug.LogError("Trying to Call NextPanel() on a UIManager that doesn't contain a loop group");
+				return false;
+			}
+			if (loopGroup.Length == 0)
+			{
+				Debug.LogError("No panels listed in loop group of " + name);
+				return false;
+			}
+			return true;
+		}
+
+		private bool TryPreparePanel(UIPanel input)
+		{
 			if (transitioning)
 			{
 				Debug.LogError("Wait for transition to end before setting new panel");
-				return;
+				return false;
 			}
 			if (currentPanel != null)
 			{
@@ -102,8 +205,7 @@ namespace Rellac.UI
 			}
 			root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForAnimationEnd(input));
 			input.Initialise((RectTransform)Instantiate(input.panelPrefab, inParent).transform);
-			input.PlayTransition(this);
-			transitioning = true;
+			return true;
 		}
 
 		private IEnumerator WaitForAnimationEnd(UIPanel panel)

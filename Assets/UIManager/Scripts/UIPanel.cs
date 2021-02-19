@@ -70,12 +70,12 @@ namespace Rellac.UI
 		{
 			manager.animator.speed = 1f / speed;
 			manager.animator.Play(transition_.inAnimation.name);
-			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForTransitionIn(instantiation, speed));
+			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForTransitionIn(instantiation, transition_, speed));
 		}
 
-		public IEnumerator WaitForTransitionIn(RectTransform parent, float speed)
+		public IEnumerator WaitForTransitionIn(RectTransform parent, UITransition transition_, float speed)
 		{
-			yield return new WaitForSeconds(transition.inAnimation.length * speed);
+			yield return new WaitForSeconds(transition_.inAnimation.length * speed);
 			onPanelTransitionedIn.Invoke(parent);
 		}
 

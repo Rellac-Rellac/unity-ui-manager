@@ -58,6 +58,10 @@ namespace Rellac.UI
 			clickBlocker = animator.transform.Find("ClickBlocker").gameObject;
 			passOverBlocker = animator.transform.Find("PassOverBlocker").gameObject;
 			root.GetComponent<UIFitter>().Fit();
+			foreach (UIFitter fitter in root.GetComponentsInChildren<UIFitter>())
+			{
+				fitter.Fit();
+			}
 
 			RectTransform panelRoot = (RectTransform)Instantiate(initialPanel.panelPrefab, inParent).transform;
 			animator.Play("Instant");
@@ -88,7 +92,6 @@ namespace Rellac.UI
 
 			inParent.SetSiblingIndex(input.panelOnTop == UIPanel.ParentSelection.In ? 2 : 1);
 
-			root.GetComponent<UIFitter>().Fit();
 			foreach (Transform child in inParent)
 			{
 				child.SetParent(outParent);

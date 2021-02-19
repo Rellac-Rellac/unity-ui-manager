@@ -15,6 +15,15 @@ An initialised Manager can swap between panels via SetPanel(UIPanel)
 
 ![](SetPanel-example.png)
 
+# Features
+-----------
+- Extremely modular - forget about merge conflicts!
+- Very fast to get a prototype up and running
+- Pretty UI Transitions just as easy as GameObject.SetActive()
+- Very simple inspector with minimal inputs, a great way to bridge the experience gap between a developer and a designer
+- Only 5 small scripts control the whole system - not much can possibly break
+- Use of Animations give an incredible amount of control over transitions
+
 # UI Panel
 ----------
 **Create > UI > Panel**

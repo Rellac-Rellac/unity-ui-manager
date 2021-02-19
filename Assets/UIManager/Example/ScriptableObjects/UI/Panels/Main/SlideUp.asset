@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: SlideUp
   m_EditorClassIdentifier: 
   panelPrefab: {fileID: 2770682837383440702, guid: ce06df4de1743a243af94497093c4f34, type: 3}
-  inAnimation: {fileID: 7400000, guid: 445e976379f1e694887c055847926073, type: 2}
+  transition: {fileID: 11400000, guid: 4f0ed94abf0fa9d42a3dbd467e37090f, type: 2}
   animationSpeed: 1
   blockPassOver: 0
   onPanelInstantiated:
     m_PersistentCalls:
       m_Calls: []
   onPanelTransitionedIn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelTransitionOutStarted:
     m_PersistentCalls:
       m_Calls: []
   onPanelTransitionedOut:

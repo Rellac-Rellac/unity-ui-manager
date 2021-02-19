@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: Fade
   m_EditorClassIdentifier: 
   panelPrefab: {fileID: 2770682837383440702, guid: ce06df4de1743a243af94497093c4f34, type: 3}
-  inAnimation: {fileID: 7400000, guid: d77a6ecb41cbf0b4099bcb0e7c4e4018, type: 2}
+  transition: {fileID: 11400000, guid: d3b81e48f5c969e45804659053e70f49, type: 2}
   animationSpeed: 2
   blockPassOver: 0
   onPanelInstantiated:
     m_PersistentCalls:
       m_Calls: []
   onPanelTransitionedIn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelTransitionOutStarted:
     m_PersistentCalls:
       m_Calls: []
   onPanelTransitionedOut:

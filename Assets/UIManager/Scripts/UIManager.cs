@@ -90,7 +90,7 @@ namespace Rellac.UI
 			clickBlocker.SetActive(true);
 			passOverBlocker.SetActive(input.blockPassOver);
 
-			inParent.SetSiblingIndex(input.panelOnTop == UIPanel.ParentSelection.In ? 2 : 1);
+			inParent.SetSiblingIndex(input.transition.panelOnTop == UITransition.ParentSelection.inComingPanel ? 2 : 1);
 
 			foreach (Transform child in inParent)
 			{
@@ -108,7 +108,7 @@ namespace Rellac.UI
 
 		private IEnumerator WaitForAnimationEnd(UIPanel panel)
 		{
-			yield return new WaitForSeconds(panel.inAnimation.length * panel.animationSpeed);
+			yield return new WaitForSeconds(panel.transition.inAnimation.length * panel.animationSpeed);
 			ClearOutParent();
 			transitioning = false;
 			animator.Play("Idle");

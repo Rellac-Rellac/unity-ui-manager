@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: About
   m_EditorClassIdentifier: 
   panelPrefab: {fileID: 8748173182883691356, guid: 65fcded9d5817c3489bb745cfcb81950, type: 3}
-  inAnimation: {fileID: 7400000, guid: 6060cae0cfddb03439305b067bbe5238, type: 2}
+  transition: {fileID: 11400000, guid: 520efb67b726f384e9a42b26dd02ef39, type: 2}
   animationSpeed: 0.3
   blockPassOver: 0
   onPanelInstantiated:
     m_PersistentCalls:
       m_Calls: []
   onPanelTransitionedIn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelTransitionOutStarted:
     m_PersistentCalls:
       m_Calls: []
   onPanelTransitionedOut:

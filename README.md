@@ -9,7 +9,6 @@ A Simple UI Manager for rapid prototyping and ease of collaboration
 - Very fast to get a prototype up and running
 - Pretty UI Transitions just as easy as GameObject.SetActive()
 - Very simple inspector with minimal inputs, a great way to bridge the experience gap between a developer and a designer
-- Only 6 small scripts control the whole system - not much can possibly break
 - Use of Animations give an incredible amount of control over transitions
 - No code required
 
@@ -44,6 +43,19 @@ You can enable the passover click blocker for your smaller panels to prevent cli
 Events are available for whenever this panel is instantiated and when the transitions in/out have ended
 
 ![](UIPanel-example.png)
+
+# UI Transition
+----------------
+**Create > UI > Transition**
+
+UI Transitions are references by the UIPanel to know which animation to play and which way to order the panels.
+
+Here you can set the "Panel on Top" to be either the panel currently coming in, or the panel currently going away.
+
+See "Adding an Animation" for further info on the specifics of the required animation
+
+![](UITransition-example.png)
+
 
 # UI Panel Listener
 --------------------

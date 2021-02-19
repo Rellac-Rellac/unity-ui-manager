@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: SlideRight
   m_EditorClassIdentifier: 
   panelPrefab: {fileID: 2770682837383440702, guid: ce06df4de1743a243af94497093c4f34, type: 3}
-  inAnimation: {fileID: 7400000, guid: 2f31efadef4a6c24fb94573470e17a0e, type: 2}
+  transition: {fileID: 11400000, guid: 84a3b7e5afb19ad498ce6e5b66357c7c, type: 2}
   animationSpeed: 1
   blockPassOver: 0
   onPanelInstantiated:
     m_PersistentCalls:
       m_Calls: []
   onPanelTransitionedIn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelTransitionOutStarted:
     m_PersistentCalls:
       m_Calls: []
   onPanelTransitionedOut:

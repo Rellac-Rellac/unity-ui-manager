@@ -11,21 +11,15 @@ namespace Rellac.UI
 		[Tooltip("Prefab containing content for this panel")]
 		public GameObject panelPrefab;
 		/// <summary>
-		/// Animation to play when this panel is called
-		/// Must be listed in master Animation Controller
+		/// Transition used for this animation
 		/// </summary>
-		[Tooltip("Animation to play when this panel is called\nMust be listed in master Animation Controller")]
-		public AnimationClip inAnimation;
+		[Tooltip("Transition used for this animation")]
+		public UITransition transition;
 		/// <summary>
 		/// Speed in seconds to run transition animation
 		/// </summary>
 		[Tooltip("Speed in seconds to run transition animation")]
 		public float animationSpeed = 1;
-		/// <summary>
-		/// Panel rendered on top during this transition
-		/// </summary>
-		[Tooltip("Panel rendered on top during this transition")]
-		public ParentSelection panelOnTop;
 		/// <summary>
 		/// Enable click blocker behind this panel
 		/// </summary>
@@ -75,20 +69,14 @@ namespace Rellac.UI
 		public void PlayTransition(UIManager manager)
 		{
 			manager.animator.speed = 1f / animationSpeed;
-			manager.animator.Play(inAnimation.name);
+			manager.animator.Play(transition.inAnimation.name);
 			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForTransitionIn(instantiation));
 		}
 
 		public IEnumerator WaitForTransitionIn(RectTransform parent)
 		{
-			yield return new WaitForSeconds(inAnimation.length * animationSpeed);
+			yield return new WaitForSeconds(transition.inAnimation.length * animationSpeed);
 			onPanelTransitionedIn.Invoke(parent);
-		}
-
-		public enum ParentSelection
-		{
-			In,
-			Out
 		}
 
 	}

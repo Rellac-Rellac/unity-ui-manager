@@ -11,6 +11,7 @@ A Simple UI Manager for rapid prototyping and ease of collaboration
 - Very simple inspector with minimal inputs, a great way to bridge the experience gap between a developer and a designer
 - Only 5 small scripts control the whole system - not much can possibly break
 - Use of Animations give an incredible amount of control over transitions
+- No code required
 
 # UI Manager
 ------------
@@ -19,6 +20,8 @@ A Simple UI Manager for rapid prototyping and ease of collaboration
 The UI Manager is used to instantiate a starting point and flip between panels in that RectTransform. Multiple managers can be used throughout the project and they can reference any UI Panel object.
 
 A Manager must first be Initialised with a starting RectTransform before panels can be called.
+
+![](Init-example.png)
 
 An initialised Manager can swap between panels via SetPanel(UIPanel)
 
@@ -45,10 +48,7 @@ Events are available for whenever this panel is instantiated and when the transi
 UIPanelListener can be added to any GameObject and will listen for the relevant events of any specified panel. This can be used to trigger an animation within the panel once it has transitioned or to hide a GameObject until the transition has finished.
 
 Available events to register to:
-- onPrefabInstantiated
-- onTransitionedIn
-- onTransitionOutStarted
-- onTransitionedOut
+![](Listener-example.png)
 
 # Adding an Animation
 ----------------------

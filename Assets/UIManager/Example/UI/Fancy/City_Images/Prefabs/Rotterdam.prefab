@@ -349,7 +349,6 @@ GameObject:
   - component: {fileID: 3175962297038717131}
   - component: {fileID: 7708756651588470381}
   - component: {fileID: 7603716586871655262}
-  - component: {fileID: 7180943088906083709}
   m_Layer: 5
   m_Name: Rotterdam
   m_TagString: Untagged
@@ -429,18 +428,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 7180943088906083709}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: pulse
-          m_BoolArgument: 1
-        m_CallState: 2
   onPanelTransitionOutStarted:
     m_PersistentCalls:
       m_Calls:
@@ -459,22 +446,3 @@ MonoBehaviour:
   onPanelTransitionedOut:
     m_PersistentCalls:
       m_Calls: []
---- !u!95 &7180943088906083709
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7194396612586935302}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 282212893256c21469113fda16651eda, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

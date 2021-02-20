@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-namespace DrawAndCode.Examples.UI
+namespace Rellac.UI
 {
 	public class UIManagerExampleStart : MonoBehaviour
 	{

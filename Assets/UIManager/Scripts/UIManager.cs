@@ -118,10 +118,18 @@ namespace Rellac.UI
 
 			RectTransform panelRoot = (RectTransform)Instantiate(panel.panelPrefab, inParent).transform;
 			animator.Play("Instant");
-			panel.Initialise(panelRoot);
-			panel.onPanelTransitionedIn.Invoke(panelRoot);
+			panel.Initialise(this, panelRoot);
+			panel.OnPanelTransitionedIn(this, panelRoot);
 			currentPanel = panel;
 			transitioning = false;
+		}
+
+		/// <summary>
+		/// Clears out system, requiring another Initialise to use again
+		/// </summary>
+		public void Clear()
+		{
+			Destroy(root.gameObject);
 		}
 
 		/// <summary>
@@ -204,7 +212,7 @@ namespace Rellac.UI
 				rt.offsetMin = rt.offsetMax = Vector2.zero;
 			}
 			root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForAnimationEnd(input, transition, speed));
-			input.Initialise((RectTransform)Instantiate(input.panelPrefab, inParent).transform);
+			input.Initialise(this, (RectTransform)Instantiate(input.panelPrefab, inParent).transform);
 			return true;
 		}
 

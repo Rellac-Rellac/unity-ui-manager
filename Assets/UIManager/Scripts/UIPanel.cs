@@ -56,10 +56,10 @@ namespace Rellac.UI
 		/// Initialise with instantiated panel
 		/// </summary>
 		/// <param name="input">new root panel in scene</param>
-		public void Initialise(RectTransform input)
+		public void Initialise(UIManager manager, RectTransform input)
 		{
 			instantiation = input;
-			onPanelInstantiated.Invoke(instantiation);
+			OnPanelInstantiated(manager, instantiation);
 		}
 
 		/// <summary>
@@ -70,13 +70,35 @@ namespace Rellac.UI
 		{
 			manager.animator.speed = 1f / speed;
 			manager.animator.Play(transition_.inAnimation.name);
-			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForTransitionIn(instantiation, transition_, speed));
+			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForTransitionIn(instantiation, manager, transition_, speed));
 		}
 
-		public IEnumerator WaitForTransitionIn(RectTransform parent, UITransition transition_, float speed)
+		public IEnumerator WaitForTransitionIn(RectTransform parent, UIManager manager, UITransition transition_, float speed)
 		{
 			yield return new WaitForSeconds(transition_.inAnimation.length * speed);
-			onPanelTransitionedIn.Invoke(parent);
+			OnPanelTransitionedIn(manager, parent);
+		}
+
+		public void OnPanelInstantiated(UIManager manager, RectTransform rect)
+		{
+			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(PanelInstantiatedWait(rect));
+		}
+
+		private IEnumerator PanelInstantiatedWait(RectTransform rect)
+		{
+			yield return new WaitForEndOfFrame();
+			onPanelInstantiated.Invoke(rect);
+		}
+
+		public void OnPanelTransitionedIn(UIManager manager, RectTransform rect)
+		{
+			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(PanelTransitionedInWait(rect));
+		}
+
+		private IEnumerator PanelTransitionedInWait(RectTransform rect)
+		{
+			yield return new WaitForEndOfFrame();
+			onPanelTransitionedIn.Invoke(rect);
 		}
 
 	}

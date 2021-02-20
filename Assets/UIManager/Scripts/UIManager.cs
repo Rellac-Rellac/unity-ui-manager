@@ -129,7 +129,10 @@ namespace Rellac.UI
 		/// </summary>
 		public void Clear()
 		{
-			Destroy(root.gameObject);
+			if (root_ != null)
+			{
+				Destroy(root.gameObject);
+			}
 		}
 
 		/// <summary>

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7151bd5aa65050498da035e89a1fd2c, type: 3}
+  m_Name: Rome
+  m_EditorClassIdentifier: 
+  panelPrefab: {fileID: 7194396612586935302, guid: d091e72bf0daa0e419b8245716aca10d, type: 3}
+  transition: {fileID: 11400000, guid: 5354f497eba878849b5acb8ed665f271, type: 2}
+  animationSpeed: 0.2
+  blockPassOver: 1
+  onPanelInstantiated:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelTransitionedIn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelTransitionOutStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelTransitionedOut:
+    m_PersistentCalls:
+      m_Calls: []

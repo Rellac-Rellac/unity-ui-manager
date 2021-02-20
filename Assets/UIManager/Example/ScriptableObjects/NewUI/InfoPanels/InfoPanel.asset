@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 057ab074f94fedd4d8431cf5471dbad5, type: 3}
+  m_Name: InfoPanel
+  m_EditorClassIdentifier: 
+  containsLoopGroup: 1
+  initialPanel: {fileID: 0}
+  loopTransitionSpeed: 0.5
+  prevTransition: {fileID: 11400000, guid: 84a3b7e5afb19ad498ce6e5b66357c7c, type: 2}
+  nextTransition: {fileID: 11400000, guid: 520efb67b726f384e9a42b26dd02ef39, type: 2}
+  loopGroup:
+  - {fileID: 11400000, guid: 9ed0e7a74b54d8c448c82d46dfae2c6d, type: 2}
+  - {fileID: 11400000, guid: db8076b18b5960247a0a5630bf080db2, type: 2}
+  - {fileID: 11400000, guid: 33418c46457ab7d4092a9f9a2c96ba24, type: 2}
+  - {fileID: 11400000, guid: 0e4c57c1671b62b469291a24dea3a185, type: 2}

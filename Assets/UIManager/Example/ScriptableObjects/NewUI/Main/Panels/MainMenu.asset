@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7151bd5aa65050498da035e89a1fd2c, type: 3}
+  m_Name: MainMenu
+  m_EditorClassIdentifier: 
+  panelPrefab: {fileID: 1839230205277365299, guid: cdefdb5d6b2d2c34cb0cd6e4ff30e1fc, type: 3}
+  transition: {fileID: 11400000, guid: d3b81e48f5c969e45804659053e70f49, type: 2}
+  animationSpeed: 1
+  blockPassOver: 0
+  onPanelInstantiated:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelTransitionedIn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelTransitionOutStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onPanelTransitionedOut:
+    m_PersistentCalls:
+      m_Calls: []

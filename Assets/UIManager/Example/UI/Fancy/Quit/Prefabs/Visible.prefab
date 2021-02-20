@@ -314,7 +314,7 @@ MonoBehaviour:
         m_MethodName: SetPanel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 8bd84c6a9b7ee4d4593ae58a633423fe, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 866892b226cb5084bb421697a4a6968b, type: 2}
           m_ObjectArgumentAssemblyTypeName: Rellac.UI.UIPanel, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0

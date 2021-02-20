@@ -311,11 +311,11 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 11400000, guid: c4c5b667ab5d3ed40a9067b986412b48, type: 2}
         m_TargetAssemblyTypeName: Rellac.UI.UIManager, Assembly-CSharp
-        m_MethodName: Clear
-        m_Mode: 1
+        m_MethodName: SetPanel
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 8bd84c6a9b7ee4d4593ae58a633423fe, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Rellac.UI.UIPanel, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

@@ -140,7 +140,7 @@ namespace Rellac.UI
 		{
 			if (TryPreparePanel(input, input.transition, input.animationSpeed))
 			{
-				input.PlayTransition(this, input.transition, containsLoopGroup ? loopTransitionSpeed : input.animationSpeed);
+				input.PlayTransition(this, input.transition, input.animationSpeed);
 				transitioning = true;
 			}
 		}

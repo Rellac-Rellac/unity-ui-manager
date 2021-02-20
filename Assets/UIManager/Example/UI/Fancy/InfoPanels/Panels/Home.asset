@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelPrefab: {fileID: 7194396612586935302, guid: bbd979f32ca7017418b3f9bab3efd9ca, type: 3}
   transition: {fileID: 11400000, guid: 4f0ed94abf0fa9d42a3dbd467e37090f, type: 2}
-  animationSpeed: 1
+  animationSpeed: 0.5
   blockPassOver: 0
   onPanelInstantiated:
     m_PersistentCalls:

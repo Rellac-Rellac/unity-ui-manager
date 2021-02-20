@@ -1,6 +1,12 @@
 # unity-ui-manager
 A Simple UI Manager for rapid prototyping and ease of collaboration
 
+[![Made with Unity](https://img.shields.io/badge/Made%20with-Unity-57b9d3.svg?style=plastic&logo=unity)](https://unity3d.com)
+![](https://img.shields.io/badge/license-unlicensed-lightgrey)
+
+![](https://img.shields.io/badge/-rapid%20prototyping-brightgreen)
+![](https://img.shields.io/badge/-modularity-brightgreen)
+
 ![](gif_demo.gif)
 
 # Features

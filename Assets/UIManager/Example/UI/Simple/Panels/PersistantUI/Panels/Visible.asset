@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7151bd5aa65050498da035e89a1fd2c, type: 3}
-  m_Name: Settings
+  m_Name: Visible
   m_EditorClassIdentifier: 
   panelPrefab: {fileID: 8441060399074707230, guid: ae6f0c3057a90b64b845b91481b369f2, type: 3}
   transition: {fileID: 11400000, guid: 4f0ed94abf0fa9d42a3dbd467e37090f, type: 2}

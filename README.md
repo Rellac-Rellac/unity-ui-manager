@@ -1,4 +1,4 @@
-# unity-ui-manager
+# <img src="https://raw.githubusercontent.com/Rellac-Rellac/unity-ui-manager/main/Assets/UIManager/Gizmos/UIManager%20Icon.png" width="50" height="50" />unity-ui-manager
 A Simple UI Manager for rapid prototyping and ease of collaboration
 
 [![Made with Unity](https://img.shields.io/badge/Made%20with-Unity-57b9d3.svg?style=plastic&logo=unity)](https://unity3d.com)
@@ -93,3 +93,18 @@ Animations should last 1 second each so that we can specify the speed in seconds
 too fast at 1 second - simply specify a larger time in your UIPanel Object
 
 If you want the out parent to clear its contents early (default is at the end of the transition), simply add an Animation Event to your Animation and call ClearOutParent()
+
+# Attribution
+--------------
+I've used some icons under the creative commons license for this manager
+
+You shouldn't need to add these attributions your application, as they only show in the editor:
+
+UIManager
+- Electronic Data Storage by ProSymbols from the Noun Project
+
+UIPanel
+- page by Kirsh from the Noun Project
+
+UITransition
+- play by Royyan Razka from the Noun Project

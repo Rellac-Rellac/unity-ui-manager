@@ -18,6 +18,14 @@ A Simple UI Manager for rapid prototyping and ease of collaboration
 - Use of Animations give an incredible amount of control over transitions
 - No code required
 
+# Contents
+-----------
+- [UI Manager](https://github.com/Rellac-Rellac/unity-ui-manager#ui-manager)
+- [UI Panel](https://github.com/Rellac-Rellac/unity-ui-manager#ui-panel)
+- [UI Transition](https://github.com/Rellac-Rellac/unity-ui-manager#ui-transition)
+- [Adding an Animation](https://github.com/Rellac-Rellac/unity-ui-manager#adding-an-animation)
+- [Attribution](https://github.com/Rellac-Rellac/unity-ui-manager#attribution)
+
 # UI Manager
 ------------
 **Create > UI > Manager**
@@ -44,9 +52,7 @@ UI Panels are used to reference the panel prefab and the transition animation us
 
 Assign a prefab here to instantiate whenever this UIPanel is called - root will be adjusted to a stretched fit over the target RectTransform of the UI Manager
 
-Specify here the transition animation that you would like to use. The animation must be listed in the Animator Controller of the UIRoot prefab
-
-The speed of the transition is specified in seconds and you specify which panel should be on top during the transition here
+Specify here the transition animation that you would like to use. The speed of the transition is specified in seconds 
 
 You can enable the passover click blocker for your smaller panels to prevent clicking unwanted background buttons
 
@@ -58,7 +64,7 @@ Events are available for whenever this panel is instantiated and when the transi
 ----------------
 **Create > UI > Transition**
 
-UI Transitions are references by the UIPanel to know which animation to play and which way to order the panels.
+UI Transitions are references by the UIPanel to know which animation to play and which way to order the panels. The animation must be listed in the Animator Controller of the UIRoot prefab
 
 Here you can set the "Panel on Top" to be either the panel currently coming in, or the panel currently going away.
 

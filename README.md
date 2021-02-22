@@ -1,6 +1,4 @@
-<img src="https://raw.githubusercontent.com/Rellac-Rellac/unity-ui-manager/main/Assets/UIManager/Gizmos/UIManager%20Icon.png" width="50" height="50" />
-
-# unity-ui-manager
+# <img src="https://raw.githubusercontent.com/Rellac-Rellac/unity-ui-manager/main/Assets/UIManager/Gizmos/UIManager%20Icon.png" width="50" height="50" /> unity-ui-manager
 
 A Simple UI Manager for rapid prototyping and ease of collaboration
 

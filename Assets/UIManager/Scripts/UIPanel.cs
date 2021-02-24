@@ -70,7 +70,7 @@ namespace Rellac.UI
 		{
 			manager.animator.speed = 1f / speed;
 			manager.animator.Play(transition_.inAnimation.name);
-			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForTransitionIn(instantiation, manager, transition_, speed));
+			manager.root.StartCoroutine(WaitForTransitionIn(instantiation, manager, transition_, speed));
 		}
 
 		public IEnumerator WaitForTransitionIn(RectTransform parent, UIManager manager, UITransition transition_, float speed)
@@ -81,7 +81,7 @@ namespace Rellac.UI
 
 		public void OnPanelInstantiated(UIManager manager, RectTransform rect)
 		{
-			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(PanelInstantiatedWait(rect));
+			manager.root.StartCoroutine(PanelInstantiatedWait(rect));
 		}
 
 		private IEnumerator PanelInstantiatedWait(RectTransform rect)
@@ -92,7 +92,7 @@ namespace Rellac.UI
 
 		public void OnPanelTransitionedIn(UIManager manager, RectTransform rect)
 		{
-			manager.root.GetComponent<MonoBehaviour>().StartCoroutine(PanelTransitionedInWait(rect));
+			manager.root.StartCoroutine(PanelTransitionedInWait(rect));
 		}
 
 		private IEnumerator PanelTransitionedInWait(RectTransform rect)

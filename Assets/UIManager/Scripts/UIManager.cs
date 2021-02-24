@@ -36,11 +36,11 @@ namespace Rellac.UI
 		[Tooltip("Group of UIPanels to transition between is manager contains a loop group")]
 		[SerializeField] private UIPanel[] loopGroup = null;
 
-		RectTransform root_;
+		MonoBehaviour root_;
 		/// <summary>
-		/// Root RectTransform of scene reference
+		/// Root MonoBehaviour of scene reference
 		/// </summary>
-		public RectTransform root
+		public MonoBehaviour root
 		{
 			get
 			{
@@ -97,17 +97,13 @@ namespace Rellac.UI
 		/// <param name="parent">RectTransform to assign as parent</param>
 		public void Initialise(RectTransform parent)
 		{
-			root_ = (RectTransform)((GameObject)Instantiate(Resources.Load("UIManager/UI Root"), parent)).transform;
+			root_ = ((GameObject)Instantiate(Resources.Load("UIManager/UI Root"), parent)).GetComponent<MonoBehaviour>();
 			animator_ = root.GetComponentInChildren<Animator>();
 			inParent = animator.transform.Find("Parent_In");
 			outParent = animator.transform.Find("Parent_Out");
 			clickBlocker = animator.transform.Find("ClickBlocker").gameObject;
 			passOverBlocker = animator.transform.Find("PassOverBlocker").gameObject;
 			root.GetComponent<UIFitter>().Fit();
-			foreach (UIFitter fitter in root.GetComponentsInChildren<UIFitter>())
-			{
-				fitter.Fit();
-			}
 
 			UIPanel panel = initialPanel;
 			if (containsLoopGroup)
@@ -198,7 +194,7 @@ namespace Rellac.UI
 			}
 			if (currentPanel != null)
 			{
-				currentPanel.onPanelTransitionOutStarted.Invoke(root_);
+				currentPanel.onPanelTransitionOutStarted.Invoke((RectTransform)root_.transform);
 			}
 
 			clickBlocker.SetActive(true);
@@ -214,7 +210,7 @@ namespace Rellac.UI
 				rt.anchorMax = Vector2.one;
 				rt.offsetMin = rt.offsetMax = Vector2.zero;
 			}
-			root.GetComponent<MonoBehaviour>().StartCoroutine(WaitForAnimationEnd(input, transition, speed));
+			root.StartCoroutine(WaitForAnimationEnd(input, transition, speed));
 			input.Initialise(this, (RectTransform)Instantiate(input.panelPrefab, inParent).transform);
 			return true;
 		}

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEditor;
 namespace Rellac.UI.Editor
 {
@@ -29,15 +26,13 @@ namespace Rellac.UI.Editor
 		{
 			serializedObject.Update();
 			EditorGUILayout.PropertyField(containsLoopGroup);
+			EditorGUILayout.PropertyField(initialPanel);
 			if (containsLoopGroup.boolValue)
 			{
 				EditorGUILayout.PropertyField(loopTransitionSpeed);
 				EditorGUILayout.PropertyField(prevTransition);
 				EditorGUILayout.PropertyField(nextTransition);
 				EditorGUILayout.PropertyField(loopGroup);
-			} else
-			{
-				EditorGUILayout.PropertyField(initialPanel);
 			}
 			serializedObject.ApplyModifiedProperties();
 		}

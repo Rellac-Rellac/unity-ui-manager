@@ -70,7 +70,7 @@ namespace Rellac.UI
 		private bool transitioning = false;
 		private UIPanel currentPanel;
 
-		private int loopIdx_;
+		private int loopIdx_ = 0;
 		private int loopIdx
 		{
 			get
@@ -106,12 +106,6 @@ namespace Rellac.UI
 			root.GetComponent<UIFitter>().Fit();
 
 			UIPanel panel = initialPanel;
-			if (containsLoopGroup)
-			{
-				panel = loopGroup[0];
-				loopIdx = 0;
-			}
-
 			RectTransform panelRoot = (RectTransform)Instantiate(panel.panelPrefab, inParent).transform;
 			animator.Play("Instant");
 			panel.Initialise(this, panelRoot);
